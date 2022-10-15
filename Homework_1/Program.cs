@@ -15,7 +15,7 @@ Console.WriteLine($"Maximal number is {max}, minamal number is {min}");
 */
 
 // Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
-
+/*
 Console.WriteLine("Hello, I can determine maximal of three numbers!");
 Console.Write("Write a first number: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
@@ -36,3 +36,15 @@ if (max < num3)
 }
 
 Console.WriteLine($"Maximal number is {max}");
+*/
+
+// Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
+
+Console.WriteLine("Hello, I can determine even and uneven numbers!");
+Console.Write("Write a number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+if (num % 2 == 0)
+Console.Write($"Number {num} is even.");
+else
+Console.WriteLine($"Number {num} is uneven.");
