@@ -39,7 +39,7 @@ Console.WriteLine($"Maximal number is {max}");
 */
 
 // Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
-
+/*
 Console.WriteLine("Hello, I can determine even and uneven numbers!");
 Console.Write("Write a number: ");
 int num = Convert.ToInt32(Console.ReadLine());
@@ -48,3 +48,18 @@ if (num % 2 == 0)
 Console.Write($"Number {num} is even.");
 else
 Console.WriteLine($"Number {num} is uneven.");
+*/
+
+// Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+/*
+Console.WriteLine("Hello, I can show you all the even numbers from 1 to the number you write!");
+Console.Write("Write a number: ");
+int N = Convert.ToInt32(Console.ReadLine());
+int i = 2;
+ 
+while (i <= N)
+{
+    Console.Write(i + " ");
+    i += 2;
+}
+*/
