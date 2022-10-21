@@ -63,3 +63,18 @@ while (i <= N)
     i += 2;
 }
 */
+
+// Задача 10. Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+
+int SecondNumber(int number)
+{
+    int result = (number % 100) / 10;
+    return result;
+}
+
+Console.Write("Input a three-digit number: ");
+int N = Convert.ToInt32(Console.ReadLine());
+
+int secNum = SecondNumber(N);
+
+Console.WriteLine($"Second number of {N} is {secNum}");
