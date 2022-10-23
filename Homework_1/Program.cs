@@ -81,7 +81,7 @@ Console.WriteLine($"Second number of {N} is {secNum}");
 */
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
-
+/*
 int ThirdNumber(int num)
 {
     int num3 = 0; 
@@ -96,3 +96,26 @@ int N = Convert.ToInt32(Console.ReadLine());
 int answer = ThirdNumber(N);
 if (answer == 11) Console.WriteLine("Please write another number, your number doesn't have a third digit");
 else Console.WriteLine($"A third digit of your number {N} is {answer}");
+*/
+
+// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+/*
+bool WeekDay(int num)
+{
+    if (num > 0 && num < 6) 
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+Console.Write("Input the day of the week and I will check if it is a weekend: ");
+int day = Convert.ToInt32(Console.ReadLine());
+
+bool result = WeekDay(day);
+
+Console.WriteLine(result);
+*/
