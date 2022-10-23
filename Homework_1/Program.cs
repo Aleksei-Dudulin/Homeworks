@@ -65,7 +65,7 @@ while (i <= N)
 */
 
 // Задача 10. Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
-
+/*
 int SecondNumber(int number)
 {
     int result = (number % 100) / 10;
@@ -78,3 +78,21 @@ int N = Convert.ToInt32(Console.ReadLine());
 int secNum = SecondNumber(N);
 
 Console.WriteLine($"Second number of {N} is {secNum}");
+*/
+
+// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+
+int ThirdNumber(int num)
+{
+    int num3 = 0; 
+    while (num > 999 || num < -999) num = Math.Abs(num / 10);
+    if (num > -100 && num < 100) num3 = 11;
+    else if (num > -1000 || num < -99 || num > 99 || num <1000) num3 = Math.Abs(num % 10);
+    return num3;
+}
+
+Console.Write("Input a number: ");
+int N = Convert.ToInt32(Console.ReadLine());
+int answer = ThirdNumber(N);
+if (answer == 11) Console.WriteLine("Please write another number, your number doesn't have a third digit");
+else Console.WriteLine($"A third digit of your number {N} is {answer}");
