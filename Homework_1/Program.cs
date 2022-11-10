@@ -182,3 +182,26 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 CubeNumbers(number);
 */
+
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+/*
+int FindAvB(int A, int B)
+{
+    int result = 0;
+    
+    for(int current = 1; current <= B; current++)
+    {
+        result = current*A;
+    }
+    return result;
+}
+
+Console.Write("Input a first number: ");
+int numA = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a second number: ");
+int numB = Convert.ToInt32(Console.ReadLine());
+
+int answer = FindAvB(numA, numB);
+
+Console.WriteLine($"{numA} ^ {numB} = {answer}");
+*/
