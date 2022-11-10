@@ -119,3 +119,29 @@ bool result = WeekDay(day);
 
 Console.WriteLine(result);
 */
+
+// Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+
+bool Polindrom(int number)
+{
+    int num1 = number % 10; int num2 = number / 10000; int num3 = (number % 10000) / 1000; int num4 = (number % 100) / 10;
+    if (num1 == num2 && num3 == num4)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+Console.Write("Please, input a 5-digit number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+bool result = Polindrom(num);
+Console.WriteLine($"Number {num} is polidrom - it is {result}.");
+
+// Задача 21. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+
+
+// Задача 23. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
