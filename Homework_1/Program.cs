@@ -205,3 +205,25 @@ int answer = FindAvB(numA, numB);
 
 Console.WriteLine($"{numA} ^ {numB} = {answer}");
 */
+
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+/*
+int FindSum(int number)
+{
+    int sum = 0;
+    
+    while (number != 0)
+    {
+        sum += number % 10;
+        number = number / 10;
+    }
+    return sum;
+}
+
+Console.Write("Input a number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int result = FindSum(num);
+
+Console.WriteLine($"Sum of all numbers is {result}");
+*/
