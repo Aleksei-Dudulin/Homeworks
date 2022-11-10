@@ -166,7 +166,7 @@ double lengthXY = Length(numx1, numy1, numz1, numx2, numy2, numz2);
 Console.Write($"The length of segment between X and Y is {lengthXY}");
 */
 // Задача 23. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-
+/*
 void CubeNumbers(int num)
 {
     int i = 0;
@@ -181,3 +181,4 @@ Console.Write("Input a number: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 CubeNumbers(number);
+*/
