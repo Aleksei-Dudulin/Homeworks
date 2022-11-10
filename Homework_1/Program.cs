@@ -142,9 +142,9 @@ Console.WriteLine($"Number {num} is polidrom - it is {result}.");
 */
 // Задача 21. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
-double Length(double x1, double y1, double x2, double y2)
+double Length(double x1, double y1, double z1,  double x2, double y2, double z2)
 {
-    double result = Math.Sqrt(Math.Pow(x1-x2, 2) + Math.Pow(y1-y2, 2));
+    double result = Math.Sqrt(Math.Pow(x2-x1, 2) + Math.Pow(y2-y1, 2) + Math.Pow(z2-z1, 2));
     return result;
 }
 
@@ -152,13 +152,28 @@ Console.Write("Input coordinate X1: ");
 double numx1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input coordinate Y1: ");
 double numy1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input coordinate Z1: ");
+double numz1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input coordinate X2: ");
 double numx2 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input coordinate Y2: ");
 double numy2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input coordinate Z2: ");
+double numz2 = Convert.ToInt32(Console.ReadLine());
 
-double lengthXY = Length(numx1, numy1, numx2, numy2);
+double lengthXY = Length(numx1, numy1, numz1, numx2, numy2, numz2);
 
 Console.Write($"The length of segment between X and Y is {lengthXY}");
 
 // Задача 23. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+/*
+void CubeNumbers(int num)
+{
+    int i = 0;
+    while(i <= num)
+    {
+        int result = Math.Pow(num, 3);
+        i++;
+    }
+}
+*/
