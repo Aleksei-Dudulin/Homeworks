@@ -121,7 +121,7 @@ Console.WriteLine(result);
 */
 
 // Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-
+/*
 bool Polindrom(int number)
 {
     int num1 = number % 10; int num2 = number / 10000; int num3 = (number % 10000) / 1000; int num4 = (number % 100) / 10;
@@ -139,9 +139,26 @@ Console.Write("Please, input a 5-digit number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 bool result = Polindrom(num);
 Console.WriteLine($"Number {num} is polidrom - it is {result}.");
-
+*/
 // Задача 21. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
+double Length(double x1, double y1, double x2, double y2)
+{
+    double result = Math.Sqrt(Math.Pow(x1-x2, 2) + Math.Pow(y1-y2, 2));
+    return result;
+}
 
+Console.Write("Input coordinate X1: ");
+double numx1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input coordinate Y1: ");
+double numy1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input coordinate X2: ");
+double numx2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input coordinate Y2: ");
+double numy2 = Convert.ToInt32(Console.ReadLine());
+
+double lengthXY = Length(numx1, numy1, numx2, numy2);
+
+Console.Write($"The length of segment between X and Y is {lengthXY}");
 
 // Задача 23. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
