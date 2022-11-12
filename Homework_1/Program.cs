@@ -244,3 +244,31 @@ int[] result = new int [8];
 FillArray(result);
 PrintArray(result);
 */
+
+// Задача 29*: Напишите программу, которая задаёт массив из 8 элементов, запрашиваемых у пользователя, и выводит их на экран.
+/*
+int[] CreateArray(int size)
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+    {
+        Console.Write("Input element of array: ");
+        int current = Convert.ToInt32(Console.ReadLine());
+        array[i] = current;
+    }
+    return array;
+}
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    
+    Console.WriteLine();
+}
+
+Console.Write("Input array size: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] NewArray = CreateArray(size);
+ShowArray(NewArray);
+*/
