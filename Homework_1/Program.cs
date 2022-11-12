@@ -187,12 +187,9 @@ CubeNumbers(number);
 /*
 int FindAvB(int A, int B)
 {
-    int result = 0;
-    
-    for(int current = 1; current <= B; current++)
-    {
-        result = current*A;
-    }
+    int result = A;
+    for(int current = 1; current < B; current++)
+        result *= A;
     return result;
 }
 
@@ -211,8 +208,7 @@ Console.WriteLine($"{numA} ^ {numB} = {answer}");
 int FindSum(int number)
 {
     int sum = 0;
-    
-    while (number != 0)
+    while(number != 0)
     {
         sum += number % 10;
         number = number / 10;
@@ -226,4 +222,25 @@ int num = Convert.ToInt32(Console.ReadLine());
 int result = FindSum(num);
 
 Console.WriteLine($"Sum of all numbers is {result}");
+*/
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+/*
+void FillArray(int[] array)
+{
+    int length = array.Length;
+    for(int i = 0; i < length; i++)
+        array[i] = new Random().Next(1,10);
+}
+
+void PrintArray(int[] col)
+{
+    int count = col.Length;
+    for(int pos = 0; pos < count; pos++)
+        Console.Write(col[pos] + " ");
+}
+
+int[] result = new int [8];
+FillArray(result);
+PrintArray(result);
 */
