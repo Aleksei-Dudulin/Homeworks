@@ -272,3 +272,118 @@ int size = Convert.ToInt32(Console.ReadLine());
 int[] NewArray = CreateArray(size);
 ShowArray(NewArray);
 */
+
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+/*
+void CreateArray(int[] array)
+{
+    int length = array.Length;
+    for(int i = 0; i < length; i++)
+        array[i] = new Random().Next(100,1000);
+}
+*/
+/*
+void ShowMeArray(int[] createArray)
+{
+    for(int j = 0; j < createArray.Length; j++)
+        Console.Write(createArray[j] + " ");
+    Console.WriteLine();
+}
+*/
+/*
+int CountEven(int[] someArray)
+{
+    int count = 0;
+    for(int i = 0; i < someArray.Length; i++)
+        if(someArray[i] % 2 == 0)
+            count += 1;
+    return count;
+}
+
+Console.Write("Input quantity of array elements: ");
+int q = Convert.ToInt32(Console.ReadLine());
+int[] myArray = new int[q];
+CreateArray(myArray);
+ShowMeArray(myArray);
+int result = CountEven(myArray);
+Console.WriteLine($"Quantity of even numbers is {result}");
+*/
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+/*
+int[] CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+        array[i] = new Random().Next(minValue, maxValue + 1);
+    return array;
+}
+*/
+/*
+int SumUneven(int[] col)
+{
+    int result = 0;
+    for(int i = 1; i < col.Length; i += 2)
+        result += col[i];
+    return result;
+}
+
+Console.Write("Input quantity of array elemets: ");
+int q = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[] randomArray = CreateRandomArray(q, min, max);
+ShowMeArray(randomArray);
+Console.WriteLine($"Sum value of array elements with uneven index is {SumUneven(randomArray)}");
+*/
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+/*
+double[] CreateFractionalArray(int size, int minValue, int maxValue)
+{
+    double[] array = new double[size];
+    for(int i = 0; i < size; i++)
+        array[i] = Math.Round(new Random().Next(minValue, maxValue + 1) + new Random().NextDouble(), 2);
+    return array;
+}
+
+void ShowMyArray(double[] createNewArray)
+{
+    for(int j = 0; j < createNewArray.Length; j++)
+        Console.Write(createNewArray[j] + " ");
+    Console.WriteLine();
+}
+
+double Difference(double[] someFractionalArray)
+{
+    int posMax = 0;
+    int posMin = 0;
+        
+    for(int k = 1; k < someFractionalArray.Length; k++)
+        if(someFractionalArray[k] > someFractionalArray[posMax])
+            posMax = k;
+        else
+            if(someFractionalArray[k] < someFractionalArray[posMin])
+                posMin = k;
+    double difference = someFractionalArray[posMax] - someFractionalArray[posMin];
+    return difference;
+}
+
+Console.Write("Input quantity of array elemets: ");
+int quan = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input integer min possible value: ");
+int numMin = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input integer max possible value: ");
+int numMax = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+double[] fractionalArray = CreateFractionalArray(quan, numMin, numMax);
+ShowMyArray(fractionalArray);
+double diff = Difference(fractionalArray);
+Console.WriteLine($"Difference between max and min elements is {diff}");
+Console.WriteLine();
+*/
