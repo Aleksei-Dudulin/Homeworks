@@ -1,4 +1,6 @@
-﻿// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+﻿// ******************************************** ДЗ 1 *************************************************
+
+// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 /*
 Console.WriteLine("Hello, I can determine maximal and minimal numbers!");
 Console.Write("Write a first number: ");
@@ -64,6 +66,8 @@ while (i <= N)
 }
 */
 
+// ******************************************** ДЗ 2 *************************************************
+
 // Задача 10. Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 /*
 int SecondNumber(int number)
@@ -119,6 +123,8 @@ bool result = WeekDay(day);
 
 Console.WriteLine(result);
 */
+
+// ******************************************** ДЗ 3 *************************************************
 
 // Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 /*
@@ -182,6 +188,8 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 CubeNumbers(number);
 */
+
+// ******************************************** ДЗ 4 *************************************************
 
 // Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 /*
@@ -272,6 +280,8 @@ int size = Convert.ToInt32(Console.ReadLine());
 int[] NewArray = CreateArray(size);
 ShowArray(NewArray);
 */
+
+// ******************************************** ДЗ 5 *************************************************
 
 // Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 // Напишите программу, которая покажет количество чётных чисел в массиве.
@@ -387,3 +397,107 @@ double diff = Difference(fractionalArray);
 Console.WriteLine($"Difference between max and min elements is {diff}");
 Console.WriteLine();
 */
+
+// ******************************************** ДЗ 6 *************************************************
+
+// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 1 способ
+
+int[] FillArray(int size)
+{
+    int[] array = new int[size];
+
+    for(int i = 0; i < size; i++)
+    {
+        Console.Write("Input number: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+}
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    
+    Console.WriteLine();
+}
+
+int CountPositiveNumbers(int[] array)
+{
+    int count = 0;
+    for(int i = 0; i < array.Length; i++)
+        if(array[i] > 0) count++;
+    return count;
+}
+
+Console.Write("How much numbers you want input: ");
+int quantity = Convert.ToInt32(Console.ReadLine());
+int[] myArray = FillArray(quantity);
+Console.WriteLine();
+ShowArray(myArray);
+Console.WriteLine();
+int result = CountPositiveNumbers(myArray);
+Console.WriteLine($"You inputed {result} positive number(s)");
+
+// 2 способ
+
+Console.Write("How much numbers you want input: ");
+int q = Convert.ToInt32(Console.ReadLine());  
+int count = 0;
+for(int i = 0; i < q; i++)
+    {
+        Console.Write("Input number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+        if(num > 0)
+            {
+                count++;
+                Console.WriteLine($"You inputed {count} positive number(s)"); 
+            }
+        else Console.WriteLine($"You inputed {count} positive number(s)");
+    }
+
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
+// значения b1, k1, b2 и k2 задаются пользователем.
+
+double[] IntersectionPoint(double k1, double b1, double k2, double b2)
+    {
+        double x = (b2 - b1) / (k1 - k2);
+        double y = k1 * x + b1;
+        
+        double[] array = {x, y};
+        return array;
+    }
+
+
+void ShowArray(double[] array)
+{
+    Console.Write($"Coordinates of intersection point x;y is ");
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + ";" + " ");
+    
+    Console.WriteLine();
+}
+
+Console.WriteLine("Hello, user, we have equations of two lines: y = k1 * x + b1 and y = k2 * x + b2."
+                 + " You must input k1, b1, k2, b2");
+
+Console.Write("Please, input k1: ");
+double k1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Please, input b1: ");
+double b1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Please, input k1: ");
+double k2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Please, input b1: ");
+double b2 = Convert.ToInt32(Console.ReadLine());
+
+if(k1 == k2 && b1 == b2) 
+    {
+        Console.WriteLine("These two lines are parallel, therefore always x = y and all points with "
+                         +"coordinates are common points of these lines.");
+    }
+else
+    {
+        double[] coordinateArray = IntersectionPoint(k1, b1, k2, b2);
+        ShowArray(coordinateArray);
+    }
