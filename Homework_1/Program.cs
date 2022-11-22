@@ -402,7 +402,7 @@ Console.WriteLine();
 
 // Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 // 1 способ
-
+/*
 int[] FillArray(int size)
 {
     int[] array = new int[size];
@@ -439,9 +439,9 @@ ShowArray(myArray);
 Console.WriteLine();
 int result = CountPositiveNumbers(myArray);
 Console.WriteLine($"You inputed {result} positive number(s)");
-
+*/
 // 2 способ
-
+/*
 Console.Write("How much numbers you want input: ");
 int q = Convert.ToInt32(Console.ReadLine());  
 int count = 0;
@@ -456,10 +456,10 @@ for(int i = 0; i < q; i++)
             }
         else Console.WriteLine($"You inputed {count} positive number(s)");
     }
-
+*/
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
 // значения b1, k1, b2 и k2 задаются пользователем.
-
+/*
 double[] IntersectionPoint(double k1, double b1, double k2, double b2)
     {
         double x = (b2 - b1) / (k1 - k2);
@@ -501,3 +501,160 @@ else
         double[] coordinateArray = IntersectionPoint(k1, b1, k2, b2);
         ShowArray(coordinateArray);
     }
+*/
+
+// ******************************************** Homework 7 *************************************************
+
+// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+
+double[,] CreateRandomArray(int rows, int colums, int minValue, int maxValue)
+{
+    double[,] array = new double[rows, colums];
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < colums; j++)
+            array[i,j] = Math.Round(new Random().Next(minValue, maxValue + 1) + new Random().NextDouble(), 2);
+    }
+    return array;
+}
+
+void Show2Array(double[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i,j] + " ");
+
+        Console.WriteLine();
+    }
+}
+
+Console.Write("Please, input quantity of rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Please, input quantity of columns: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input integer min possible value: ");
+int numMin = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input integer max possible value: ");
+int numMax = Convert.ToInt32(Console.ReadLine());
+
+double[,] myArray = CreateRandomArray(rows, columns, numMin, numMax);
+Show2Array(myArray);
+
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+int[,] CreateRandomArray(int rows, int colums, int minValue, int maxValue)
+{
+    int[,] array = new int[rows, colums];
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < colums; j++)
+            array[i,j] = new Random().Next(minValue, maxValue + 1);
+    return array;
+}
+
+void ShowArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i,j] + " ");
+
+        Console.WriteLine();
+    }
+}
+
+int PositionToValue(int[,] array, int numi, int numj)
+{
+    int value = 0;
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            if(numi > array.GetLength(0) || numj > array.GetLength(1))
+            {
+                value = -1;
+                break;
+            }
+            else if(i == numi && j == numj) value = array[i,j];
+        }
+    }
+    return value;
+}
+
+Console.Write("Hello, at first, lets create a random array. Please, input quantity of rows: ");
+int r = Convert.ToInt32(Console.ReadLine());
+Console.Write("Please, input quantity of columns: ");
+int c = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input integer min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input integer max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[,] newArray = CreateRandomArray(r, c, min, max);
+ShowArray(newArray);
+Console.Write("Good, now, input position in row: ");
+int posrow = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input position in column: ");
+int poscol = Convert.ToInt32(Console.ReadLine());
+
+int result = PositionToValue(newArray, posrow, poscol);
+if(result == -1) Console.WriteLine($"There is no element with position [{posrow},{poscol}], try again.");
+else Console.WriteLine($"Value of element in position [{posrow},{poscol}] is {result}.");
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+double[,] CreateRandomArray(int rows, int colums, int minValue, int maxValue)
+{
+    double[,] array = new double[rows, colums];
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < colums; j++)
+            array[i,j] = new Random().Next(minValue, maxValue + 1);
+    return array;
+}
+
+void Show2Array(double[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i,j] + " ");
+
+        Console.WriteLine();
+    }
+}
+
+double[] AverageArray(double[,] array)
+{
+    double[] averArray = new double[array.GetLength(1)];
+
+    for(int j = 0, x = 0; j < array.GetLength(1); j++, x++)
+        for(int i = 0; i < array.GetLength(0); i++)
+        {
+            averArray[x] += Math.Round(array[i,j] / array.GetLength(0), 2);
+        }
+    return averArray;
+}
+
+void ShowArray(double[] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+}
+
+Console.Write("Hello, at first, lets create a random array. Please, input quantity of rows: ");
+int r = Convert.ToInt32(Console.ReadLine());
+Console.Write("Please, input quantity of columns: ");
+int c = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input integer min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input integer max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+double[,] newArray = CreateRandomArray(r, c, min, max);
+Show2Array(newArray);
+Console.WriteLine();
+double[] myAverageNewArray = AverageArray(newArray);
+ShowArray(myAverageNewArray);
