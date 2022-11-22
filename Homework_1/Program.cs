@@ -631,7 +631,7 @@ double[] AverageArray(double[,] array)
     for(int j = 0, x = 0; j < array.GetLength(1); j++, x++)
         for(int i = 0; i < array.GetLength(0); i++)
         {
-            averArray[x] += Math.Round(array[i,j] / array.GetLength(0), 2);
+            averArray[x] += array[i,j] / array.GetLength(0);
         }
     return averArray;
 }
@@ -640,7 +640,7 @@ void ShowArray(double[] array)
 {
     for(int i = 0; i < array.GetLength(0); i++)
     {
-        Console.Write(array[i] + " ");
+        Console.Write(Math.Round(array[i], 1) + " ");
     }
 }
 
