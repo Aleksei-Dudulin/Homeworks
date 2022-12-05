@@ -664,7 +664,6 @@ ShowArray(myAverageNewArray);
 
 // Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
-/*
 int[,] CreateRandomArray(int rows, int colums, int minValue, int maxValue)
 {
     int[,] array = new int[rows, colums];
@@ -719,10 +718,9 @@ void ChangElementsMaxToMin(int[,] array)
 
 ChangElementsMaxToMin(newArray);
 ShowArray(newArray);
-*/
 
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
-/*
+
 int[,] CreateRandomArray(int rows, int colums, int minValue, int maxValue)
 {
     int[,] array = new int[rows, colums];
@@ -786,10 +784,9 @@ for(int k = 1; k < r; k++)
 }
 int result = numLine;
 Console.WriteLine($"{result} line have minimal sum of elements");
-*/
 
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-/*
+
 int[,] CreateRandomArray(int rows, int colums, int minValue, int maxValue)
 {
     int[,] array = new int[rows, colums];
@@ -857,12 +854,10 @@ Console.WriteLine("The result of multiply matrix 1 and matrix 2 is next matrix:"
 Console.WriteLine();
 ShowArray(matrix12);
 Console.WriteLine();
-*/
 
 // Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, 
 // добавляя индексы каждого элемента.
 
-/*
 int[,,] Create3DArray(int x, int y, int z)
 {
     int[,,] array = new int[x,y,z];
@@ -908,11 +903,9 @@ else
     int[,,] newArray = Create3DArray(x, y, z);
     Show3DArray(newArray);
 }
-*/
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 
-/*
 int[,] Create4x4Array(int n)
 {
     
@@ -968,4 +961,3 @@ Console.Write("Hello, please, input a number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 int[,] newArray = Create4x4Array(num);
 ShowArray(newArray);
-*/
