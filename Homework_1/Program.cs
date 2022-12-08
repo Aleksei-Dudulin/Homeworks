@@ -970,7 +970,7 @@ ShowArray(newArray);
 // ******************************************** Homework 9 *************************************************
 
 // Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
-/*
+
 void ShowNumbers(int n)
 {
     Console.Write(n + " ");
@@ -981,10 +981,10 @@ void ShowNumbers(int n)
 }
 
 ShowNumbers(10);
-*/
+
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
-/*
+
 int SumNatureNum(int m, int n)
 {
     if (m < 0 && n > 0) m = 0;
@@ -994,9 +994,10 @@ int SumNatureNum(int m, int n)
 
 int sum = SumNatureNum(-15, 4);
 Console.WriteLine(sum);
-*/
+
+
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
-/*
+
 int Akkerman(int m, int n)
 {
     if (m == 0) return n + 1;
@@ -1007,4 +1008,3 @@ int Akkerman(int m, int n)
 
 int answer = Akkerman(-3,1);
 Console.WriteLine(answer);
-*/
