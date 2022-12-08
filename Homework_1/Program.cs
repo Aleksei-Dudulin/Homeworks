@@ -663,7 +663,7 @@ ShowArray(myAverageNewArray);
 // ******************************************** Homework 8 *************************************************
 
 // Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
-
+/*
 int[,] CreateRandomArray(int rows, int colums, int minValue, int maxValue)
 {
     int[,] array = new int[rows, colums];
@@ -718,9 +718,10 @@ void ChangElementsMaxToMin(int[,] array)
 
 ChangElementsMaxToMin(newArray);
 ShowArray(newArray);
+*/
 
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
-
+/*
 int[,] CreateRandomArray(int rows, int colums, int minValue, int maxValue)
 {
     int[,] array = new int[rows, colums];
@@ -784,9 +785,10 @@ for(int k = 1; k < r; k++)
 }
 int result = numLine;
 Console.WriteLine($"{result} line have minimal sum of elements");
+*/
 
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-
+/*
 int[,] CreateRandomArray(int rows, int colums, int minValue, int maxValue)
 {
     int[,] array = new int[rows, colums];
@@ -854,10 +856,11 @@ Console.WriteLine("The result of multiply matrix 1 and matrix 2 is next matrix:"
 Console.WriteLine();
 ShowArray(matrix12);
 Console.WriteLine();
+*/
 
 // Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, 
 // добавляя индексы каждого элемента.
-
+/*
 int[,,] Create3DArray(int x, int y, int z)
 {
     int[,,] array = new int[x,y,z];
@@ -903,9 +906,10 @@ else
     int[,,] newArray = Create3DArray(x, y, z);
     Show3DArray(newArray);
 }
+*/
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
-
+/*
 int[,] Create4x4Array(int n)
 {
     
@@ -961,3 +965,46 @@ Console.Write("Hello, please, input a number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 int[,] newArray = Create4x4Array(num);
 ShowArray(newArray);
+*/
+
+// ******************************************** Homework 9 *************************************************
+
+// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
+/*
+void ShowNumbers(int n)
+{
+    Console.Write(n + " ");
+    int i = 1;
+    if(i == n) return;
+    ShowNumbers(n - 1);
+    
+}
+
+ShowNumbers(10);
+*/
+
+// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+/*
+int SumNatureNum(int m, int n)
+{
+    if (m < 0 && n > 0) m = 0;
+    if (m >= 0 && n > 0 && m < n - 1) return m + 1 + SumNatureNum(m + 1, n);
+    return 0;
+}
+
+int sum = SumNatureNum(-15, 4);
+Console.WriteLine(sum);
+*/
+// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+/*
+int Akkerman(int m, int n)
+{
+    if (m == 0) return n + 1;
+    if (m > 0 && n == 0) return Akkerman(m - 1, 1);
+    if (m > 0 && n > 0) return Akkerman(m - 1,Akkerman(m, n - 1));
+    return -1;
+}
+
+int answer = Akkerman(-3,1);
+Console.WriteLine(answer);
+*/
